@@ -38,6 +38,9 @@ class DateFormatTest extends \PHPUnit_Framework_TestCase
         $this->object->setFormat(DateFormat::FORMAT_YYYYMMDD);
         $this->assertEquals('Ymd', $this->object->getFormat());
 
+        $this->object->setFormat(DateFormat::FORMAT_YYYYMM);
+        $this->assertEquals('Ym', $this->object->getFormat());
+
         $this->object->setFormat('Y-m-d');
     }
 
@@ -93,5 +96,12 @@ class DateFormatTest extends \PHPUnit_Framework_TestCase
     {
         $date = '2014-02-01T00:00:00';
         $this->assertEquals('20140201', $this->object->apply($date));
+    }
+
+    public function testApplyYearMonthFormat()
+    {
+        $date = '2014-02-01T00:00:00';
+        $this->object->setFormat(DateFormat::FORMAT_YYYYMM);
+        $this->assertEquals('201402', $this->object->apply($date));
     }
 }

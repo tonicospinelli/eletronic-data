@@ -9,6 +9,8 @@ class DateFormat extends AbstractFormat
 
     const FORMAT_YYYYMMDD = 'Ymd';
 
+    const FORMAT_YYYYMM = 'Ym';
+
     const FORMAT_DDMMYYYY = 'dmY';
 
     const FORMAT_MMDDYYYY = 'mdY';
@@ -36,6 +38,7 @@ class DateFormat extends AbstractFormat
             case self::FORMAT_DDMMYYYY:
             case self::FORMAT_MMDDYYYY:
             case self::FORMAT_YYYYMMDD:
+            case self::FORMAT_YYYYMM:
                 $this->format = $format;
                 break;
             default:
