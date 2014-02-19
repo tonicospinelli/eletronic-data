@@ -27,7 +27,7 @@ class IntegerFormatTest extends \PHPUnit_Framework_TestCase
     public function testGetDefaultData()
     {
         $this->assertEquals('0', $this->object->getFillWith());
-        $this->assertEquals(IntegerFormat::FILL_ON_LEFT, $this->object->getFillWith());
+        $this->assertEquals(IntegerFormat::FILL_ON_LEFT, $this->object->getFillOn());
     }
 
     public function testApplyWhenIntegerIsGiven()
