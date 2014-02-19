@@ -202,11 +202,7 @@ abstract class AbstractField implements FieldInterface
     }
 
     /**
-     * Sets the default field value.
-     *
-     * @param mixed $value
-     *
-     * @return FieldInterface
+     * @inheritdoc
      */
     public function setDefaultValue($value)
     {
@@ -216,8 +212,7 @@ abstract class AbstractField implements FieldInterface
     }
 
     /**
-     * Gets the default field value.
-     * @return mixed
+     * @inheritdoc
      */
     public function getDefaultValue()
     {
@@ -225,10 +220,15 @@ abstract class AbstractField implements FieldInterface
     }
 
     /**
-     * @return string
+     * @inheritdoc
      */
     public function getFormattedValue()
     {
-        return $this->getFormat()->apply($this->getValue());
+        $value = $this->getFormat()->apply($this->getValue());
+        if ($this->getLength() > 0) {
+            return mb_substr($value, 0, $this->getLength());
+        }
+
+        return $value;
     }
 }

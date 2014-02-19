@@ -3,7 +3,6 @@
 namespace EletronicData\Tests\Field;
 
 use EletronicData\Field\AbstractField;
-use EletronicData\Field\FieldInterface;
 
 class FieldTest extends \PHPUnit_Framework_TestCase
 {
@@ -97,10 +96,13 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->method('convert')
             ->with($this->stringContains('asd'))
             ->will($this->returnValue('ASD'));
+
+        $this->object->setLength(3);
         $this->object->setFormat($format);
         $this->object->setValue('asd');
         $this->assertEquals('ASD', $this->object->getFormattedValue());
     }
+
     public function testGetFormattedBlankValue()
     {
         $format = $this->getMockForAbstractClass('EletronicData\Format\AbstractFormat');
