@@ -3,6 +3,7 @@
 namespace EletronicData\Tests\Field;
 
 use EletronicData\Field\AbstractField;
+use EletronicData\Type\AbstractType;
 
 class FieldTest extends \PHPUnit_Framework_TestCase
 {
@@ -28,13 +29,6 @@ class FieldTest extends \PHPUnit_Framework_TestCase
     {
         $this->object->setDescription('Description');
         $this->assertEquals('Description', $this->object->getDescription());
-    }
-
-    public function testSetAndGetFormat()
-    {
-        $format = $this->getMock('EletronicData\Format\FormatInterface');
-        $this->object->setFormat($format);
-        $this->assertInstanceOf('EletronicData\Format\FormatInterface', $this->object->getFormat());
     }
 
     public function testSetAndGetLength()
@@ -97,8 +91,12 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->with($this->stringContains('asd'))
             ->will($this->returnValue('ASD'));
 
+        /** @var AbstractType $type */
+        $type = $this->getMockForAbstractClass('EletronicData\Type\AbstractType');
+        $type->setFormat($format);
+
         $this->object->setLength(3);
-        $this->object->setFormat($format);
+        $this->object->setType($type);
         $this->object->setValue('asd');
         $this->assertEquals('ASD', $this->object->getFormattedValue());
     }
@@ -113,8 +111,12 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->with($this->stringContains(' '))
             ->will($this->returnValue(' '));
 
+        /** @var AbstractType $type */
+        $type = $this->getMockForAbstractClass('EletronicData\Type\AbstractType');
+        $type->setFormat($format);
+
+        $this->object->setType($type);
         $this->object->setLength(3);
-        $this->object->setFormat($format);
         $this->object->setValue(' ');
         $this->assertEquals('   ', $this->object->getFormattedValue());
     }
@@ -129,7 +131,11 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->with($this->stringContains('0'))
             ->will($this->returnValue('0'));
 
-        $this->object->setFormat($format);
+        /** @var AbstractType $type */
+        $type = $this->getMockForAbstractClass('EletronicData\Type\AbstractType');
+        $type->setFormat($format);
+
+        $this->object->setType($type);
         $this->object->setValue('0');
         $this->assertEquals('0', $this->object->getFormattedValue());
     }

@@ -44,11 +44,6 @@ abstract class AbstractField implements FieldInterface
     protected $type;
 
     /**
-     * @var FormatInterface
-     */
-    protected $format;
-
-    /**
      * @inheritdoc
      */
     public function setDescription($description)
@@ -64,25 +59,6 @@ abstract class AbstractField implements FieldInterface
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function setFormat(FormatInterface $format)
-    {
-        $format->setLength($this->getLength());
-        $this->format = $format;
-
-        return $this;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getFormat()
-    {
-        return $this->format;
     }
 
     /**
@@ -170,6 +146,7 @@ abstract class AbstractField implements FieldInterface
      */
     public function setType(TypeInterface $type)
     {
+        $type->setLength($this->getLength());
         $this->type = $type;
 
         return $this;
@@ -224,7 +201,9 @@ abstract class AbstractField implements FieldInterface
      */
     public function getFormattedValue()
     {
-        $value = $this->getFormat()->apply($this->getValue());
+        $this->getType()->setLength($this->getLength());
+        $value = $this->getType()->getFormat()->apply($this->getValue());
+
         if ($this->getLength() > 0) {
             return mb_substr($value, 0, $this->getLength());
         }

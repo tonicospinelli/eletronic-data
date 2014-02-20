@@ -65,6 +65,10 @@ abstract class AbstractType implements TypeInterface
      */
     public function getFormat()
     {
+        if ($this->format instanceof FormatInterface) {
+            $this->format->setLength($this->getLength());
+        }
+
         return $this->format;
     }
 }

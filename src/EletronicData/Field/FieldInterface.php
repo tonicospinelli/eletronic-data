@@ -106,21 +106,6 @@ interface FieldInterface
     public function getType();
 
     /**
-     * Sets the value format.
-     *
-     * @param FormatInterface $type
-     *
-     * @return FieldInterface
-     */
-    public function setFormat(FormatInterface $type);
-
-    /**
-     * Gets the value format.
-     * @return FormatInterface
-     */
-    public function getFormat();
-
-    /**
      * Sets the field value.
      *
      * @param mixed $value
