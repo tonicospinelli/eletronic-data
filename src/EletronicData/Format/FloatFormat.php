@@ -135,11 +135,10 @@ class FloatFormat extends IntegerFormat
             throw new ConvertionException('The value given cannot be converted to Float.');
         }
 
-        return number_format(
-            $value,
-            $this->getDecimalLength(),
-            $this->getDecimalPoint(),
-            $this->getThousandsSeparator()
-        );
+        $length = $this->getDecimalLength();
+        $separator = $this->getThousandsSeparator();
+        $point = $this->getDecimalPoint();
+
+        return number_format($value, $length, $point, $separator);
     }
 }
