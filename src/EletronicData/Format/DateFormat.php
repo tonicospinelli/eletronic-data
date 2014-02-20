@@ -44,6 +44,7 @@ class DateFormat extends AbstractFormat
         if (!in_array($format, $this->allowedFormats)) {
             throw new \InvalidArgumentException('The given format ' . $format . ' is not recognized');
         }
+        $this->format = $format;
 
         return $this;
     }
