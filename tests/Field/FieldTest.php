@@ -112,9 +112,25 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->method('convert')
             ->with($this->stringContains(' '))
             ->will($this->returnValue(' '));
+
         $this->object->setLength(3);
         $this->object->setFormat($format);
         $this->object->setValue(' ');
         $this->assertEquals('   ', $this->object->getFormattedValue());
+    }
+
+    public function testGetFormattedBlankValueWithoutLength()
+    {
+        $format = $this->getMockForAbstractClass('EletronicData\Format\AbstractFormat');
+
+        $format
+            ->expects($this->any())
+            ->method('convert')
+            ->with($this->stringContains('0'))
+            ->will($this->returnValue('0'));
+
+        $this->object->setFormat($format);
+        $this->object->setValue('0');
+        $this->assertEquals('0', $this->object->getFormattedValue());
     }
 }
