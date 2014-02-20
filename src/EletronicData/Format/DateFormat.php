@@ -17,7 +17,7 @@ class DateFormat extends AbstractFormat
 
     protected $format;
 
-    function __construct()
+    public function __construct()
     {
         $this->setFormat(self::FORMAT_YYYYMMDD);
     }

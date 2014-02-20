@@ -75,7 +75,9 @@ class FloatFormat extends IntegerFormat
                 $this->decimalPoint = $decimalPoint;
                 break;
             default:
-                throw new \InvalidArgumentException('The given thousand separator ' . $decimalPoint . ' is not recognized');
+                throw new \InvalidArgumentException(
+                    'The given thousand separator ' . $decimalPoint . ' is not recognized'
+                );
         }
 
 
@@ -107,7 +109,9 @@ class FloatFormat extends IntegerFormat
                 $this->thousandsSeparator = $thousandsSeparator;
                 break;
             default:
-                throw new \InvalidArgumentException('The given thousand separator ' . $thousandsSeparator . ' is not recognized');
+                throw new \InvalidArgumentException(
+                    'The given thousand separator ' . $thousandsSeparator . ' is not recognized'
+                );
         }
 
         return $this;
@@ -131,6 +135,11 @@ class FloatFormat extends IntegerFormat
             throw new ConvertionException('The value given cannot be converted to Float.');
         }
 
-        return number_format($value, $this->getDecimalLength(), $this->getDecimalPoint(), $this->getThousandsSeparator());
+        return number_format(
+            $value,
+            $this->getDecimalLength(),
+            $this->getDecimalPoint(),
+            $this->getThousandsSeparator()
+        );
     }
 }

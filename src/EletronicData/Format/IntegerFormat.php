@@ -19,7 +19,7 @@ class IntegerFormat extends AbstractFormat
      */
     public function convert($value)
     {
-        if(!is_numeric($value)){
+        if (!is_numeric($value)) {
             throw new ConvertionException('The value given cannot be converted to Integer.');
         }
 
