@@ -41,7 +41,7 @@ class DateFormat extends AbstractFormat
      */
     public function setFormat($format)
     {
-        if (in_array($format, $this->allowedFormats)) {
+        if (!in_array($format, $this->allowedFormats)) {
             throw new \InvalidArgumentException('The given format ' . $format . ' is not recognized');
         }
 
