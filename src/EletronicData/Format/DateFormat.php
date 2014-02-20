@@ -15,6 +15,13 @@ class DateFormat extends AbstractFormat
 
     const FORMAT_MMDDYYYY = 'mdY';
 
+    protected $allowedFormats = array(
+        self::FORMAT_DDMMYYYY,
+        self::FORMAT_MMDDYYYY,
+        self::FORMAT_YYYYMMDD,
+        self::FORMAT_YYYYMM,
+    );
+
     protected $format;
 
     public function __construct()
@@ -34,16 +41,10 @@ class DateFormat extends AbstractFormat
      */
     public function setFormat($format)
     {
-        switch ($format) {
-            case self::FORMAT_DDMMYYYY:
-            case self::FORMAT_MMDDYYYY:
-            case self::FORMAT_YYYYMMDD:
-            case self::FORMAT_YYYYMM:
-                $this->format = $format;
-                break;
-            default:
-                throw new \InvalidArgumentException('The given format ' . $format . ' is not recognized');
+        if (in_array($format, $this->allowedFormats)) {
+            throw new \InvalidArgumentException('The given format ' . $format . ' is not recognized');
         }
+
         return $this;
     }
 
