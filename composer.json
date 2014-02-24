@@ -3,7 +3,7 @@
     "description": "Write and Read a Eletronic Data Interchange (EDI)",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Antonio Spinelli",
@@ -18,9 +18,9 @@
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "EletronicData\\": "src/",
-            "EletronicData\\Tests": "tests/"
+            "EletronicData\\Tests\\": "tests/"
         }
     }
 }
