@@ -3,7 +3,6 @@
 namespace EletronicData\Format;
 
 use EletronicData\Format\Exception\ConvertionException;
-use EletronicData\Format\Exception\FormatException;
 
 class FloatFormat extends IntegerFormat
 {

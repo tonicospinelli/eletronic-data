@@ -2,8 +2,6 @@
 
 namespace EletronicData\Type;
 
-use EletronicData\Type\Exception\ConvertionException;
-
 class DateType extends AbstractType
 {
 

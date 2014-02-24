@@ -37,7 +37,7 @@ interface TypeInterface
      * Sets type's format
      * @param FormatInterface $format
      *
-     * @return mixed
+     * @return TypeInterface
      */
     public function setFormat(FormatInterface $format);
 

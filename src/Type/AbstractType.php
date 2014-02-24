@@ -41,7 +41,7 @@ abstract class AbstractType implements TypeInterface
     abstract public function getName();
 
     /**
-     * @return TypeInterface
+     * @inheritdoc
      */
     public static function create()
     {

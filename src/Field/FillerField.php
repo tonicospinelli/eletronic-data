@@ -2,9 +2,6 @@
 
 namespace EletronicData\Field;
 
-use EletronicData\Format\FormatInterface;
-use EletronicData\Type\TypeInterface;
-
 class FillerField extends AbstractField
 {
 

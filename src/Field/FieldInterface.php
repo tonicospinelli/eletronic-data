@@ -2,7 +2,6 @@
 
 namespace EletronicData\Field;
 
-use EletronicData\Format\FormatInterface;
 use EletronicData\Type\TypeInterface;
 
 interface FieldInterface
@@ -34,7 +33,7 @@ interface FieldInterface
 
     /**
      * Gets the field name.
-     * @return mixed
+     * @return string
      */
     public function getName();
 
@@ -49,7 +48,7 @@ interface FieldInterface
 
     /**
      * Gets the field description.
-     * @return mixed
+     * @return string
      */
     public function getDescription();
 

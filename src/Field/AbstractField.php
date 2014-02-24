@@ -2,7 +2,6 @@
 
 namespace EletronicData\Field;
 
-use EletronicData\Format\FormatInterface;
 use EletronicData\Type\TypeInterface;
 
 abstract class AbstractField implements FieldInterface

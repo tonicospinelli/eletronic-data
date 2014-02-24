@@ -33,13 +33,13 @@ interface FormatInterface
      *                    or FormatInterface::FILL_ON_RIGHT. If it is not specified it is assumed
      *                    to be FormatInterface::FILL_ON_RIGHT.
      *
-     * @return mixed
+     * @return FormatInterface
      */
     public function setFillOn($fillOn);
 
     /**
      * Gets fill before, after or both the value.
-     * @return mixed
+     * @return int
      */
     public function getFillOn();
 
