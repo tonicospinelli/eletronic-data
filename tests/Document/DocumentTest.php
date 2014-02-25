@@ -21,6 +21,11 @@ class DocumentTest extends \PHPUnit_Framework_TestCase
         $this->object = new Document();
     }
 
+    protected function tearDown()
+    {
+        parent::tearDown();
+        $this->object = null;
+    }
 
     public function testSetAndGetEndOfLine()
     {

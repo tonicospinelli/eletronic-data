@@ -24,6 +24,12 @@ class SegmentTest extends \PHPUnit_Framework_TestCase
         $this->object = new Segment();
     }
 
+    protected function tearDown()
+    {
+        parent::tearDown();
+        $this->object = null;
+    }
+
     public function testAddAndCountField()
     {
         $field = $this->getMock('PositionalData\Field\AbstractField');
