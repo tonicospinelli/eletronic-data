@@ -3,7 +3,6 @@
 namespace PositionalData\Tests\Type;
 
 use PositionalData\Type\AbstractType;
-use PositionalData\Type\TypeInterface;
 
 class TypeTest extends \PHPUnit_Framework_TestCase
 {
