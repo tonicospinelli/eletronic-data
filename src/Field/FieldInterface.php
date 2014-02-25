@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Field;
+namespace PositionalFile\Field;
 
-use PositionalData\Type\TypeInterface;
+use PositionalFile\Type\TypeInterface;
 
 interface FieldInterface
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace PositionalData\Type;
+namespace PositionalFile\Type;
 
-use PositionalData\Format\FormatInterface;
-use PositionalData\Format\StringFormat;
+use PositionalFile\Format\FormatInterface;
+use PositionalFile\Format\StringFormat;
 
 class StringType extends AbstractType
 {

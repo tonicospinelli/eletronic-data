@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Tests\Type;
+namespace PositionalFile\Tests\Type;
 
-use PositionalData\Type\AbstractType;
+use PositionalFile\Type\AbstractType;
 
 class TypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -15,7 +15,7 @@ class TypeTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
+        $this->object = $this->getMockForAbstractClass('PositionalFile\Type\AbstractType');
         $this->object
             ->expects($this->any())
             ->method('getName')
@@ -41,14 +41,14 @@ class TypeTest extends \PHPUnit_Framework_TestCase
 
     public function testSetAndGetFormat()
     {
-        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalFile\Format\AbstractFormat');
         $this->object->setFormat($format);
-        $this->assertInstanceOf('PositionalData\Format\FormatInterface', $this->object->getFormat());
+        $this->assertInstanceOf('PositionalFile\Format\FormatInterface', $this->object->getFormat());
     }
 
     public function testCreate()
     {
-        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalFile\Format\AbstractFormat');
         $this->object->setFormat($format);
 
         $type = clone $this->object;
@@ -57,7 +57,7 @@ class TypeTest extends \PHPUnit_Framework_TestCase
             ->method('create')
             ->will($this->returnValue($this->object));
 
-        $this->assertInstanceOf('PositionalData\Type\TypeInterface', $type);
-        $this->assertInstanceOf('PositionalData\Format\FormatInterface', $type->getFormat());
+        $this->assertInstanceOf('PositionalFile\Type\TypeInterface', $type);
+        $this->assertInstanceOf('PositionalFile\Format\FormatInterface', $type->getFormat());
     }
 }

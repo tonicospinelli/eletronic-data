@@ -1,6 +1,6 @@
 <?php
 
-namespace PositionalData\Writer;
+namespace PositionalFile\Writer;
 
 class Writer extends AbstractWriter
 {

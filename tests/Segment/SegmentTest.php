@@ -1,14 +1,14 @@
 <?php
 
-namespace PositionalData\Tests\Segment;
+namespace PositionalFile\Tests\Segment;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use PositionalData\Field\Field;
-use PositionalData\Field\FieldInterface;
-use PositionalData\Segment\AbstractSegment;
-use PositionalData\Segment\Segment;
-use PositionalData\Type\IntegerType;
-use PositionalData\Type\StringType;
+use PositionalFile\Field\Field;
+use PositionalFile\Field\FieldInterface;
+use PositionalFile\Segment\AbstractSegment;
+use PositionalFile\Segment\Segment;
+use PositionalFile\Type\IntegerType;
+use PositionalFile\Type\StringType;
 
 class SegmentTest extends \PHPUnit_Framework_TestCase
 {
@@ -32,14 +32,14 @@ class SegmentTest extends \PHPUnit_Framework_TestCase
 
     public function testAddAndCountField()
     {
-        $field = $this->getMock('PositionalData\Field\AbstractField');
+        $field = $this->getMock('PositionalFile\Field\AbstractField');
         $this->object->addField($field);
         $this->assertCount(1, $this->object->getFields());
     }
 
     public function testSetAndCountField()
     {
-        $field = $this->getMock('PositionalData\Field\AbstractField');
+        $field = $this->getMock('PositionalFile\Field\AbstractField');
         $this->object->setFields(new ArrayCollection(array($field)));
         $this->assertCount(1, $this->object->getFields());
     }

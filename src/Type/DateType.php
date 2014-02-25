@@ -1,9 +1,9 @@
 <?php
 
-namespace PositionalData\Type;
+namespace PositionalFile\Type;
 
-use PositionalData\Format\DateFormat;
-use PositionalData\Format\FormatInterface;
+use PositionalFile\Format\DateFormat;
+use PositionalFile\Format\FormatInterface;
 
 class DateType extends AbstractType
 {

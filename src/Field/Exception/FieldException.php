@@ -1,6 +1,6 @@
 <?php
 
-namespace PositionalData\Field\Exception;
+namespace PositionalFile\Field\Exception;
 
 class FieldException extends \RuntimeException implements ExceptionInterface
 {

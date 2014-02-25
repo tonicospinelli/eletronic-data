@@ -1,6 +1,6 @@
 <?php
 
-namespace PositionalData\Document;
+namespace PositionalFile\Document;
 
 class Document extends AbstractDocument
 {

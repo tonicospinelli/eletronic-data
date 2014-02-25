@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Format;
+namespace PositionalFile\Format;
 
-use PositionalData\Format\Exception\FormatException;
+use PositionalFile\Format\Exception\FormatException;
 
 abstract class AbstractFormat implements FormatInterface
 {

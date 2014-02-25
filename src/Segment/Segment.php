@@ -1,6 +1,6 @@
 <?php
 
-namespace PositionalData\Segment;
+namespace PositionalFile\Segment;
 
 class Segment extends AbstractSegment
 {

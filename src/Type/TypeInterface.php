@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Type;
+namespace PositionalFile\Type;
 
-use PositionalData\Format\FormatInterface;
+use PositionalFile\Format\FormatInterface;
 
 interface TypeInterface
 {

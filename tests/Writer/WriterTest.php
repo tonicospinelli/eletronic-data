@@ -1,17 +1,17 @@
 <?php
 
-namespace PositionalData\Tests\Writer;
+namespace PositionalFile\Tests\Writer;
 
-use PositionalData\Document\Document;
-use PositionalData\Field\Field;
-use PositionalData\Field\FieldInterface;
-use PositionalData\Field\FillerField;
-use PositionalData\Segment\Segment;
-use PositionalData\Type\DateType;
-use PositionalData\Type\IntegerType;
-use PositionalData\Type\StringType;
-use PositionalData\Writer\Writer;
-use PositionalData\Writer\WriterInterface;
+use PositionalFile\Document\Document;
+use PositionalFile\Field\Field;
+use PositionalFile\Field\FieldInterface;
+use PositionalFile\Field\FillerField;
+use PositionalFile\Segment\Segment;
+use PositionalFile\Type\DateType;
+use PositionalFile\Type\IntegerType;
+use PositionalFile\Type\StringType;
+use PositionalFile\Writer\Writer;
+use PositionalFile\Writer\WriterInterface;
 
 class WriterTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace PositionalData\Tests\Field;
+namespace PositionalFile\Tests\Field;
 
-use PositionalData\Field\AbstractField;
-use PositionalData\Field\Field;
-use PositionalData\Type\AbstractType;
+use PositionalFile\Field\AbstractField;
+use PositionalFile\Field\Field;
+use PositionalFile\Type\AbstractType;
 
 class FieldTest extends \PHPUnit_Framework_TestCase
 {
@@ -65,9 +65,9 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testSetAndGetType()
     {
-        $type = $this->getMock('PositionalData\Type\TypeInterface');
+        $type = $this->getMock('PositionalFile\Type\TypeInterface');
         $this->object->setType($type);
-        $this->assertInstanceOf('PositionalData\Type\TypeInterface', $this->object->getType());
+        $this->assertInstanceOf('PositionalFile\Type\TypeInterface', $this->object->getType());
     }
 
     public function testSetAndGetValue()
@@ -90,7 +90,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFormattedNotBlankValue()
     {
-        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalFile\Format\AbstractFormat');
 
         $format
             ->expects($this->once())
@@ -99,7 +99,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue('ASD'));
 
         /** @var AbstractType $type */
-        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
+        $type = $this->getMockForAbstractClass('PositionalFile\Type\AbstractType');
         $type->setFormat($format);
 
         $this->object->setLength(3);
@@ -110,7 +110,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFormattedBlankValue()
     {
-        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalFile\Format\AbstractFormat');
 
         $format
             ->expects($this->any())
@@ -119,7 +119,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue(' '));
 
         /** @var AbstractType $type */
-        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
+        $type = $this->getMockForAbstractClass('PositionalFile\Type\AbstractType');
         $type->setFormat($format);
 
         $this->object->setType($type);
@@ -130,7 +130,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFormattedBlankValueWithoutLength()
     {
-        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalFile\Format\AbstractFormat');
 
         $format
             ->expects($this->any())
@@ -139,7 +139,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue('0'));
 
         /** @var AbstractType $type */
-        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
+        $type = $this->getMockForAbstractClass('PositionalFile\Type\AbstractType');
         $type->setFormat($format);
 
         $this->object->setType($type);
@@ -149,7 +149,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testSetFromArrayAndGetFormattedBlankValueWithoutLength()
     {
-        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalFile\Format\AbstractFormat');
 
         $format
             ->expects($this->any())
@@ -158,7 +158,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue('0'));
 
         /** @var AbstractType $type */
-        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
+        $type = $this->getMockForAbstractClass('PositionalFile\Type\AbstractType');
         $type->setFormat($format);
 
         $this->object->setFromArray(array(
@@ -171,7 +171,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testToArray()
     {
-        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalFile\Format\AbstractFormat');
 
         $format
             ->expects($this->any())
@@ -180,7 +180,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue('0'));
 
         /** @var AbstractType $type */
-        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
+        $type = $this->getMockForAbstractClass('PositionalFile\Type\AbstractType');
         $type->setFormat($format);
 
         $field = new Field(array('type' => $type, 'value' => '0'));

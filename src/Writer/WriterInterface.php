@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Writer;
+namespace PositionalFile\Writer;
 
-use PositionalData\Document\DocumentInterface;
+use PositionalFile\Document\DocumentInterface;
 
 interface WriterInterface
 {

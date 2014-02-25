@@ -1,6 +1,6 @@
 <?php
 
-namespace PositionalData\Format\Exception;
+namespace PositionalFile\Format\Exception;
 
 class FormatException extends \RuntimeException implements ExceptionInterface
 {

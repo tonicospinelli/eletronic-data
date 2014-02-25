@@ -1,9 +1,9 @@
 <?php
 
-namespace PositionalData\Type;
+namespace PositionalFile\Type;
 
-use PositionalData\Format\FloatFormat;
-use PositionalData\Format\FormatInterface;
+use PositionalFile\Format\FloatFormat;
+use PositionalFile\Format\FormatInterface;
 
 class FloatType extends IntegerType
 {

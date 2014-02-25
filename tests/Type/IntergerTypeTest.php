@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Tests\Type;
+namespace PositionalFile\Tests\Type;
 
-use PositionalData\Type\IntegerType;
+use PositionalFile\Type\IntegerType;
 
 class IntegerTypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -33,9 +33,9 @@ class IntegerTypeTest extends \PHPUnit_Framework_TestCase
     {
         $type = IntegerType::create();
 
-        $this->assertInstanceOf('PositionalData\Type\TypeInterface', $type);
-        $this->assertInstanceOf('PositionalData\Type\IntegerType', $type);
-        $this->assertInstanceOf('PositionalData\Format\FormatInterface', $type->getFormat());
-        $this->assertInstanceOf('PositionalData\Format\IntegerFormat', $type->getFormat());
+        $this->assertInstanceOf('PositionalFile\Type\TypeInterface', $type);
+        $this->assertInstanceOf('PositionalFile\Type\IntegerType', $type);
+        $this->assertInstanceOf('PositionalFile\Format\FormatInterface', $type->getFormat());
+        $this->assertInstanceOf('PositionalFile\Format\IntegerFormat', $type->getFormat());
     }
 }

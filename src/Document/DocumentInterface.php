@@ -1,9 +1,9 @@
 <?php
 
-namespace PositionalData\Document;
+namespace PositionalFile\Document;
 
 use Doctrine\Common\Collections\Collection;
-use PositionalData\Segment\SegmentInterface;
+use PositionalFile\Segment\SegmentInterface;
 
 interface DocumentInterface
 {

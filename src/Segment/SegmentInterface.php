@@ -1,9 +1,9 @@
 <?php
 
-namespace PositionalData\Segment;
+namespace PositionalFile\Segment;
 
 use Doctrine\Common\Collections\Collection;
-use PositionalData\Field\FieldInterface;
+use PositionalFile\Field\FieldInterface;
 
 interface SegmentInterface
 {

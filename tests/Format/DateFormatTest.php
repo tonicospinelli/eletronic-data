@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Tests\Format;
+namespace PositionalFile\Tests\Format;
 
-use PositionalData\Format\DateFormat;
+use PositionalFile\Format\DateFormat;
 
 class DateFormatTest extends \PHPUnit_Framework_TestCase
 {
@@ -78,7 +78,7 @@ class DateFormatTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PositionalData\Format\Exception\ConvertionException
+     * @expectedException \PositionalFile\Format\Exception\ConvertionException
      */
     public function testErrorOnApplyApplyFormat()
     {

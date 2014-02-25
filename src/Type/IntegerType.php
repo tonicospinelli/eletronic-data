@@ -1,9 +1,9 @@
 <?php
 
-namespace PositionalData\Type;
+namespace PositionalFile\Type;
 
-use PositionalData\Format\FormatInterface;
-use PositionalData\Format\IntegerFormat;
+use PositionalFile\Format\FormatInterface;
+use PositionalFile\Format\IntegerFormat;
 
 class IntegerType extends AbstractType
 {

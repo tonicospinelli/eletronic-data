@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Field;
+namespace PositionalFile\Field;
 
-use PositionalData\Type\StringType;
+use PositionalFile\Type\StringType;
 
 class FillerField extends AbstractField
 {

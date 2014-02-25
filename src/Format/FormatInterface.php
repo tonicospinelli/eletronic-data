@@ -1,6 +1,6 @@
 <?php
 
-namespace PositionalData\Format;
+namespace PositionalFile\Format;
 
 interface FormatInterface
 {

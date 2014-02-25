@@ -1,9 +1,9 @@
 <?php
 
-namespace PositionalData\Tests\Format;
+namespace PositionalFile\Tests\Format;
 
-use PositionalData\Format\AbstractFormat;
-use PositionalData\Format\FormatInterface;
+use PositionalFile\Format\AbstractFormat;
+use PositionalFile\Format\FormatInterface;
 
 class FormatTest extends \PHPUnit_Framework_TestCase
 {
@@ -16,7 +16,7 @@ class FormatTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+        $this->object = $this->getMockForAbstractClass('PositionalFile\Format\AbstractFormat');
         $this->object
             ->expects($this->any())
             ->method('convert')
@@ -40,7 +40,7 @@ class FormatTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PositionalData\Format\Exception\FormatException
+     * @expectedException \PositionalFile\Format\Exception\FormatException
      */
     public function testSetAndGetFillOn()
     {

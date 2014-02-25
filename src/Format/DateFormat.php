@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Format;
+namespace PositionalFile\Format;
 
-use PositionalData\Format\Exception\ConvertionException;
+use PositionalFile\Format\Exception\ConvertionException;
 
 class DateFormat extends AbstractFormat
 {

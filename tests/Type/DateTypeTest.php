@@ -1,8 +1,8 @@
 <?php
 
-namespace PositionalData\Tests\Type;
+namespace PositionalFile\Tests\Type;
 
-use PositionalData\Type\DateType;
+use PositionalFile\Type\DateType;
 
 class DateTypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -33,9 +33,9 @@ class DateTypeTest extends \PHPUnit_Framework_TestCase
     {
         $type = DateType::create();
 
-        $this->assertInstanceOf('PositionalData\Type\TypeInterface', $type);
-        $this->assertInstanceOf('PositionalData\Type\DateType', $type);
-        $this->assertInstanceOf('PositionalData\Format\FormatInterface', $type->getFormat());
-        $this->assertInstanceOf('PositionalData\Format\DateFormat', $type->getFormat());
+        $this->assertInstanceOf('PositionalFile\Type\TypeInterface', $type);
+        $this->assertInstanceOf('PositionalFile\Type\DateType', $type);
+        $this->assertInstanceOf('PositionalFile\Format\FormatInterface', $type->getFormat());
+        $this->assertInstanceOf('PositionalFile\Format\DateFormat', $type->getFormat());
     }
 }

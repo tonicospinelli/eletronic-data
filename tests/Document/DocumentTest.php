@@ -1,11 +1,11 @@
 <?php
 
-namespace PositionalData\Document;
+namespace PositionalFile\Document;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use PositionalData\Field\Field;
-use PositionalData\Segment\Segment;
-use PositionalData\Type\IntegerType;
+use PositionalFile\Field\Field;
+use PositionalFile\Segment\Segment;
+use PositionalFile\Type\IntegerType;
 
 class DocumentTest extends \PHPUnit_Framework_TestCase
 {
