@@ -1,4 +1,4 @@
-eletronic-data
+positional-data
 ==============
 
 [![Build Status](https://travis-ci.org/tonicospinelli/positional-data.png?branch=master)](https://travis-ci.org/tonicospinelli/positional-data)
