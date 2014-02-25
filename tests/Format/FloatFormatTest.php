@@ -86,6 +86,18 @@ class FloatFormatTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('1.50', $this->object->apply(1.5));
     }
 
+    public function testApplyWhenThousandsIsGiven()
+    {
+        $this->assertEquals('1,000.50', $this->object->apply(1000.5));
+    }
+
+    public function testApplyWithDifferentDecimalPointAndThousandsSeparator()
+    {
+        $this->object->setDecimalPoint(FloatFormat::SEPARATOR_COMMA);
+        $this->object->setThousandsSeparator(FloatFormat::SEPARATOR_DOT);
+        $this->assertEquals('1.000,50', $this->object->apply(1000.5));
+    }
+
     public function testApplyWhenDoubleIsGiven()
     {
         $this->assertEquals('1.80', $this->object->apply(1.8));
