@@ -1,8 +1,8 @@
 <?php
 
-namespace EletronicData\Type;
+namespace PositionalData\Type;
 
-use EletronicData\Format\FormatInterface;
+use PositionalData\Format\FormatInterface;
 
 abstract class AbstractType implements TypeInterface
 {

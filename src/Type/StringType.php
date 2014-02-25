@@ -1,6 +1,6 @@
 <?php
 
-namespace EletronicData\Type;
+namespace PositionalData\Type;
 
 class StringType extends AbstractType
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace EletronicData\Tests\Field;
+namespace PositionalData\Tests\Field;
 
-use EletronicData\Field\FillerField;
+use PositionalData\Field\FillerField;
 
 class FillerFieldTest extends \PHPUnit_Framework_TestCase
 {

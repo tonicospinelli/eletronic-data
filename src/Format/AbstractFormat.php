@@ -1,8 +1,8 @@
 <?php
 
-namespace EletronicData\Format;
+namespace PositionalData\Format;
 
-use EletronicData\Format\Exception\FormatException;
+use PositionalData\Format\Exception\FormatException;
 
 abstract class AbstractFormat implements FormatInterface
 {

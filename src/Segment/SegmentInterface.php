@@ -1,9 +1,9 @@
 <?php
 
-namespace EletronicData\Segment;
+namespace PositionalData\Segment;
 
 use Doctrine\Common\Collections\Collection;
-use EletronicData\Field\FieldInterface;
+use PositionalData\Field\FieldInterface;
 
 interface SegmentInterface
 {

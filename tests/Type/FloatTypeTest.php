@@ -1,8 +1,8 @@
 <?php
 
-namespace EletronicData\Tests\Type;
+namespace PositionalData\Tests\Type;
 
-use EletronicData\Type\FloatType;
+use PositionalData\Type\FloatType;
 
 class FloatTypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -33,9 +33,9 @@ class FloatTypeTest extends \PHPUnit_Framework_TestCase
     {
         $type = FloatType::create();
 
-        $this->assertInstanceOf('EletronicData\Type\TypeInterface', $type);
-        $this->assertInstanceOf('EletronicData\Type\FloatType', $type);
-        $this->assertInstanceOf('EletronicData\Format\FormatInterface', $type->getFormat());
-        $this->assertInstanceOf('EletronicData\Format\FloatFormat', $type->getFormat());
+        $this->assertInstanceOf('PositionalData\Type\TypeInterface', $type);
+        $this->assertInstanceOf('PositionalData\Type\FloatType', $type);
+        $this->assertInstanceOf('PositionalData\Format\FormatInterface', $type->getFormat());
+        $this->assertInstanceOf('PositionalData\Format\FloatFormat', $type->getFormat());
     }
 }

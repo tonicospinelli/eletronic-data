@@ -1,8 +1,8 @@
 <?php
 
-namespace EletronicData\Format;
+namespace PositionalData\Format;
 
-use EletronicData\Format\Exception\ConvertionException;
+use PositionalData\Format\Exception\ConvertionException;
 
 class StringFormat extends AbstractFormat
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace EletronicData\Tests\Field;
+namespace PositionalData\Tests\Field;
 
-use EletronicData\Field\AbstractField;
-use EletronicData\Type\AbstractType;
+use PositionalData\Field\AbstractField;
+use PositionalData\Type\AbstractType;
 
 class FieldTest extends \PHPUnit_Framework_TestCase
 {
@@ -16,7 +16,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = $this->getMockForAbstractClass('EletronicData\Field\AbstractField');
+        $this->object = $this->getMockForAbstractClass('PositionalData\Field\AbstractField');
     }
 
     protected function tearDown()
@@ -64,9 +64,9 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testSetAndGetType()
     {
-        $type = $this->getMock('EletronicData\Type\TypeInterface');
+        $type = $this->getMock('PositionalData\Type\TypeInterface');
         $this->object->setType($type);
-        $this->assertInstanceOf('EletronicData\Type\TypeInterface', $this->object->getType());
+        $this->assertInstanceOf('PositionalData\Type\TypeInterface', $this->object->getType());
     }
 
     public function testSetAndGetValue()
@@ -83,7 +83,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFormattedNotBlankValue()
     {
-        $format = $this->getMockForAbstractClass('EletronicData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
 
         $format
             ->expects($this->once())
@@ -92,7 +92,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue('ASD'));
 
         /** @var AbstractType $type */
-        $type = $this->getMockForAbstractClass('EletronicData\Type\AbstractType');
+        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
         $type->setFormat($format);
 
         $this->object->setLength(3);
@@ -103,7 +103,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFormattedBlankValue()
     {
-        $format = $this->getMockForAbstractClass('EletronicData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
 
         $format
             ->expects($this->any())
@@ -112,7 +112,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue(' '));
 
         /** @var AbstractType $type */
-        $type = $this->getMockForAbstractClass('EletronicData\Type\AbstractType');
+        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
         $type->setFormat($format);
 
         $this->object->setType($type);
@@ -123,7 +123,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFormattedBlankValueWithoutLength()
     {
-        $format = $this->getMockForAbstractClass('EletronicData\Format\AbstractFormat');
+        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
 
         $format
             ->expects($this->any())
@@ -132,7 +132,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue('0'));
 
         /** @var AbstractType $type */
-        $type = $this->getMockForAbstractClass('EletronicData\Type\AbstractType');
+        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
         $type->setFormat($format);
 
         $this->object->setType($type);

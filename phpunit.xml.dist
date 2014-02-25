@@ -11,7 +11,7 @@
          verbose="false"
          bootstrap="./vendor/autoload.php">
     <testsuites>
-        <testsuite name="Eletronic Data Test Suite">
+        <testsuite name="Positional Data Test Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

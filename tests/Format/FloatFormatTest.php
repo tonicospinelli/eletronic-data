@@ -1,8 +1,8 @@
 <?php
 
-namespace EletronicData\Tests\Format;
+namespace PositionalData\Tests\Format;
 
-use EletronicData\Format\FloatFormat;
+use PositionalData\Format\FloatFormat;
 
 class FloatFormatTest extends \PHPUnit_Framework_TestCase
 {
@@ -106,7 +106,7 @@ class FloatFormatTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \EletronicData\Format\Exception\ConvertionException
+     * @expectedException \PositionalData\Format\Exception\ConvertionException
      */
     public function testErrorWhenAStringIsGiven()
     {
@@ -114,7 +114,7 @@ class FloatFormatTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \EletronicData\Format\Exception\ConvertionException
+     * @expectedException \PositionalData\Format\Exception\ConvertionException
      */
     public function testErrorWhenAnObjectIsGiven()
     {
@@ -122,7 +122,7 @@ class FloatFormatTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \EletronicData\Format\Exception\ConvertionException
+     * @expectedException \PositionalData\Format\Exception\ConvertionException
      */
     public function testErrorWhenAnArrayIsGiven()
     {

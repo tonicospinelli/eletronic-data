@@ -1,8 +1,8 @@
 <?php
 
-namespace EletronicData\Tests\Format;
+namespace PositionalData\Tests\Format;
 
-use EletronicData\Format\StringFormat;
+use PositionalData\Format\StringFormat;
 
 class StringFormatTest extends \PHPUnit_Framework_TestCase
 {
@@ -47,7 +47,7 @@ class StringFormatTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \EletronicData\Format\Exception\ConvertionException
+     * @expectedException \PositionalData\Format\Exception\ConvertionException
      */
     public function testErrorWhenAnObjectIsGiven()
     {
@@ -55,7 +55,7 @@ class StringFormatTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \EletronicData\Format\Exception\ConvertionException
+     * @expectedException \PositionalData\Format\Exception\ConvertionException
      */
     public function testErrorWhenAnArrayIsGiven()
     {

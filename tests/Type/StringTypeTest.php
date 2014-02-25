@@ -1,8 +1,8 @@
 <?php
 
-namespace EletronicData\Tests\Type;
+namespace PositionalData\Tests\Type;
 
-use EletronicData\Type\StringType;
+use PositionalData\Type\StringType;
 
 class StringTypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -33,9 +33,9 @@ class StringTypeTest extends \PHPUnit_Framework_TestCase
     {
         $type = StringType::create();
 
-        $this->assertInstanceOf('EletronicData\Type\TypeInterface', $type);
-        $this->assertInstanceOf('EletronicData\Type\StringType', $type);
-        $this->assertInstanceOf('EletronicData\Format\FormatInterface', $type->getFormat());
-        $this->assertInstanceOf('EletronicData\Format\StringFormat', $type->getFormat());
+        $this->assertInstanceOf('PositionalData\Type\TypeInterface', $type);
+        $this->assertInstanceOf('PositionalData\Type\StringType', $type);
+        $this->assertInstanceOf('PositionalData\Format\FormatInterface', $type->getFormat());
+        $this->assertInstanceOf('PositionalData\Format\StringFormat', $type->getFormat());
     }
 }

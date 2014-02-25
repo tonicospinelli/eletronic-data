@@ -1,6 +1,6 @@
 <?php
 
-namespace EletronicData\Type\Exception;
+namespace PositionalData\Type\Exception;
 
 interface ExceptionInterface
 {

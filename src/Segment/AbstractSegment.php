@@ -1,10 +1,10 @@
 <?php
 
-namespace EletronicData\Segment;
+namespace PositionalData\Segment;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use EletronicData\Field\FieldInterface;
+use PositionalData\Field\FieldInterface;
 
 abstract class AbstractSegment implements SegmentInterface
 {

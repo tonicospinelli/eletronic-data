@@ -1,6 +1,6 @@
 {
-    "name": "tonicospinelli/eletronic-data",
-    "description": "Write and Read a Eletronic Data Interchange (EDI)",
+    "name": "tonicospinelli/positional-data",
+    "description": "Write and Read a Positional Data",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "stable",
@@ -20,8 +20,8 @@
     },
     "autoload": {
         "psr-4": {
-            "EletronicData\\": "src/",
-            "EletronicData\\Tests\\": "tests/"
+            "PositionalData\\": "src/",
+            "PositionalData\\Tests\\": "tests/"
         }
     }
 }
