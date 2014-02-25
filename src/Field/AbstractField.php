@@ -4,7 +4,7 @@ namespace PositionalData\Field;
 
 use PositionalData\Type\TypeInterface;
 
-abstract class AbstractField implements FieldInterface
+abstract class AbstractField implements FieldInterface, \Traversable
 {
 
     /**
