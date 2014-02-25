@@ -2,17 +2,22 @@
 
 namespace PositionalData\Field;
 
+use PositionalData\Type\StringType;
+
 class FillerField extends AbstractField
 {
 
-    public function __construct($startPosition = null, $length = null)
+    public function __construct(array $data = array())
     {
-        $this
-            ->setDefaultValue('0')
-            ->setName('filler')
-            ->setDescription('Fill with blank')
-            ->setStartPosition($startPosition)
-            ->setLength($length);
+        $default = array(
+            'length'      => 1,
+            'value'       => ' ',
+            'name'        => 'filler',
+            'description' => 'Fill with blank',
+            'type'        => new StringType(),
+        );
+        $data = array_merge($default, $data);
+        parent::__construct($data);
     }
 
     /**
