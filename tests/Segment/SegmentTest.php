@@ -3,7 +3,12 @@
 namespace PositionalData\Tests\Segment;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use PositionalData\Field\Field;
+use PositionalData\Field\FieldInterface;
 use PositionalData\Segment\AbstractSegment;
+use PositionalData\Segment\Segment;
+use PositionalData\Type\IntegerType;
+use PositionalData\Type\StringType;
 
 class SegmentTest extends \PHPUnit_Framework_TestCase
 {
@@ -16,7 +21,7 @@ class SegmentTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = $this->getMockForAbstractClass('PositionalData\Segment\AbstractSegment');
+        $this->object = new Segment();
     }
 
     public function testAddAndCountField()
@@ -33,4 +38,43 @@ class SegmentTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(1, $this->object->getFields());
     }
 
+    public function testToString()
+    {
+        $this->object->addField(
+            new Field(array(
+                'length' => 2,
+                'type'   => new IntegerType(),
+                'value'  => 1
+            ))
+        );
+        $this->object->addField(
+            new Field(array(
+                'length' => 5,
+                'type'   => new StringType(),
+                'value'  => 'TEST'
+            ))
+        );
+        $expected = '01TEST ';
+        $this->assertEquals($expected, $this->object->toString());
+    }
+
+    public function testToStringWithPipeSeparator()
+    {
+        $this->object->addField(
+            new Field(array(
+                'length' => 2,
+                'type'   => new IntegerType(),
+                'value'  => 1
+            ))
+        );
+        $this->object->addField(
+            new Field(array(
+                'length' => 5,
+                'type'   => new StringType(),
+                'value'  => 'TEST'
+            ))
+        );
+        $expected = '01|TEST ';
+        $this->assertEquals($expected, $this->object->toString('|'));
+    }
 }

@@ -24,7 +24,11 @@ abstract class AbstractSegment implements SegmentInterface
      */
     public function addField(FieldInterface $field)
     {
+        if (is_null($field->getSequential())) {
+            $field->setSequential($this->getFields()->count());
+        }
         $this->fields->add($field);
+
         return $this;
     }
 
@@ -34,15 +38,37 @@ abstract class AbstractSegment implements SegmentInterface
     public function setFields(Collection $fields)
     {
         $this->fields = $fields;
+
         return $this;
     }
 
     /**
-     * Gets a field collection.
-     * @return Collection
+     * @inheritdoc
      */
     public function getFields()
     {
         return $this->fields;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function toString($separator = '')
+    {
+        $string = '';
+
+        $fields = $this->getFields()->getIterator();
+        $fields->uasort(function ($a, $b) {
+            return ($a->getSequential() == $b->getSequential() ? 0 : ($a->getSequential() > $b->getSequential() ? 1 : -1));
+        });
+
+        foreach ($fields as $field) {
+            if (!empty($string)) {
+                $string .= $separator;
+            }
+            $string .= $field->getFormattedValue();
+        }
+
+        return $string;
     }
 }

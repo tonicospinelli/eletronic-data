@@ -28,7 +28,16 @@ interface SegmentInterface
 
     /**
      * Gets a field collection.
-     * @return Collection
+     * @return Collection|FieldInterface[]
      */
     public function getFields();
+
+    /**
+     * Convert the segment to string with field separator.
+     *
+     * @param string $separator
+     *
+     * @return string
+     */
+    public function toString($separator = '');
 }
