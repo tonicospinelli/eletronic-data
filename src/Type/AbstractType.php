@@ -46,8 +46,6 @@ abstract class AbstractType implements TypeInterface
     public static function create()
     {
         $type = new static();
-        $format = str_replace('Type', 'Format', get_class($type));
-        $type->setFormat(new $format());
 
         return $type;
     }
