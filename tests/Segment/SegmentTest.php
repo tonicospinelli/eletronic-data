@@ -80,7 +80,7 @@ class SegmentTest extends \PHPUnit_Framework_TestCase
                 'value'  => 'TEST'
             ))
         );
-        $expected = '01|TEST ';
+        $expected = '01|TEST';
         $this->assertEquals($expected, $this->object->toString('|'));
     }
 }

@@ -63,7 +63,7 @@ abstract class AbstractSegment implements SegmentInterface
             if (!empty($string)) {
                 $string .= $separator;
             }
-            $string .= $field->getFormattedValue();
+            $string .= $this->trim($field->getFormattedValue(), $separator);
         }
 
         return $string;
@@ -85,5 +85,18 @@ abstract class AbstractSegment implements SegmentInterface
         });
 
         return $fields;
+    }
+
+    /**
+     * Trim value if not have seaprator.
+     *
+     * @param string $value
+     * @param string $separator
+     *
+     * @return string
+     */
+    protected function trim($value, $separator)
+    {
+        return (empty($separator) ? $value : trim($value));
     }
 }
