@@ -42,6 +42,11 @@ abstract class AbstractField implements FieldInterface
      */
     protected $type;
 
+    public function __construct(array $data = array())
+    {
+        $this->setFromArray($data);
+    }
+
     /**
      * @inheritdoc
      */
@@ -156,6 +161,8 @@ abstract class AbstractField implements FieldInterface
      */
     public function getType()
     {
+        $this->type->setLength($this->getLength());
+
         return $this->type;
     }
 
@@ -200,7 +207,6 @@ abstract class AbstractField implements FieldInterface
      */
     public function getFormattedValue()
     {
-        $this->getType()->setLength($this->getLength());
         $value = $this->getType()->getFormat()->apply($this->getValue());
 
         if ($this->getLength() > 0) {
@@ -208,5 +214,42 @@ abstract class AbstractField implements FieldInterface
         }
 
         return $value;
+    }
+
+    /**
+     * Sets existing data from array.
+     *
+     * @param array $data
+     *
+     * @return FieldInterface
+     */
+    public function setFromArray(array $data)
+    {
+        foreach ($data as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (!method_exists($this, $method)) {
+                continue;
+            }
+            $this->$method($value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Converts the field to array.
+     * @return array
+     */
+    public function toArray()
+    {
+        $array = array();
+        foreach ($this as $property => $value) {
+            if (is_null($value)) {
+                continue;
+            }
+            $array[$property] = $value;
+        }
+
+        return $array;
     }
 }

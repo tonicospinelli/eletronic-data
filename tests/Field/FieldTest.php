@@ -3,6 +3,7 @@
 namespace PositionalData\Tests\Field;
 
 use PositionalData\Field\AbstractField;
+use PositionalData\Field\Field;
 use PositionalData\Type\AbstractType;
 
 class FieldTest extends \PHPUnit_Framework_TestCase
@@ -16,7 +17,7 @@ class FieldTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = $this->getMockForAbstractClass('PositionalData\Field\AbstractField');
+        $this->object = new Field();
     }
 
     protected function tearDown()
@@ -138,5 +139,47 @@ class FieldTest extends \PHPUnit_Framework_TestCase
         $this->object->setType($type);
         $this->object->setValue('0');
         $this->assertEquals('0', $this->object->getFormattedValue());
+    }
+
+    public function testSetFromArrayAndGetFormattedBlankValueWithoutLength()
+    {
+        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+
+        $format
+            ->expects($this->any())
+            ->method('convert')
+            ->with($this->stringContains('0'))
+            ->will($this->returnValue('0'));
+
+        /** @var AbstractType $type */
+        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
+        $type->setFormat($format);
+
+        $this->object->setFromArray(array(
+            'type'  => $type,
+            'value' => '0',
+        ));
+        $this->object->setValue('0');
+        $this->assertEquals('0', $this->object->getFormattedValue());
+    }
+
+    public function testToArray()
+    {
+        $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
+
+        $format
+            ->expects($this->any())
+            ->method('convert')
+            ->with($this->stringContains('0'))
+            ->will($this->returnValue('0'));
+
+        /** @var AbstractType $type */
+        $type = $this->getMockForAbstractClass('PositionalData\Type\AbstractType');
+        $type->setFormat($format);
+
+        $field = new Field(array('type' => $type, 'value' => '0'));
+
+        $this->assertTrue(is_array($field->toArray()));
+        $this->assertEquals(array('type' => $type, 'value' => '0'), $field->toArray());
     }
 }

@@ -138,4 +138,19 @@ interface FieldInterface
      * @return string
      */
     public function getFormattedValue();
+
+    /**
+     * Sets existing data from array.
+     *
+     * @param array $data
+     *
+     * @return FieldInterface
+     */
+    public function setFromArray(array $data);
+
+    /**
+     * Converts the field to array.
+     * @return array
+     */
+    public function toArray();
 }
