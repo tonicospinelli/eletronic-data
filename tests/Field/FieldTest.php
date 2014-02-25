@@ -82,6 +82,12 @@ class FieldTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('asd', $this->object->getDefaultValue());
     }
 
+    public function testSetFromArrayAndDiscardNonExistingMethod()
+    {
+        $this->object->setFromArray(array('value' => 'asd', 'nonExisting' => false));
+        $this->assertEquals('asd', $this->object->getDefaultValue());
+    }
+
     public function testGetFormattedNotBlankValue()
     {
         $format = $this->getMockForAbstractClass('PositionalData\Format\AbstractFormat');
