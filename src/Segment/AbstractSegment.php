@@ -14,7 +14,7 @@ abstract class AbstractSegment implements SegmentInterface
      */
     protected $fields;
 
-    function __construct()
+    public function __construct()
     {
         $this->fields = new ArrayCollection();
     }
