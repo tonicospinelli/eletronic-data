@@ -57,10 +57,7 @@ abstract class AbstractSegment implements SegmentInterface
     {
         $string = '';
 
-        $fields = $this->getFields()->getIterator();
-        $fields->uasort(function ($a, $b) {
-            return ($a->getSequential() == $b->getSequential() ? 0 : ($a->getSequential() > $b->getSequential() ? 1 : -1));
-        });
+        $fields = $this->sortFieldsBy('sequential');
 
         foreach ($fields as $field) {
             if (!empty($string)) {
@@ -70,5 +67,23 @@ abstract class AbstractSegment implements SegmentInterface
         }
 
         return $string;
+    }
+
+    /**
+     * @param string $property
+     *
+     * @return \Traversable
+     */
+    public function sortFieldsBy($property)
+    {
+        $fields = $this->getFields()->getIterator();
+
+        $fields->uasort(function ($a, $b) use ($property) {
+            $method = 'get' . ucfirst($property);
+
+            return ($a->$method() == $b->$method() ? 0 : ($a->$method() > $b->$method() ? 1 : -1));
+        });
+
+        return $fields;
     }
 }
