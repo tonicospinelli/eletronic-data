@@ -45,19 +45,4 @@ class TypeTest extends \PHPUnit_Framework_TestCase
         $this->object->setFormat($format);
         $this->assertInstanceOf('PositionalFile\Format\FormatInterface', $this->object->getFormat());
     }
-
-    public function testCreate()
-    {
-        $format = $this->getMockForAbstractClass('PositionalFile\Format\AbstractFormat');
-        $this->object->setFormat($format);
-
-        $type = clone $this->object;
-
-        $type::staticExpects($this->any())
-            ->method('create')
-            ->will($this->returnValue($this->object));
-
-        $this->assertInstanceOf('PositionalFile\Type\TypeInterface', $type);
-        $this->assertInstanceOf('PositionalFile\Format\FormatInterface', $type->getFormat());
-    }
 }

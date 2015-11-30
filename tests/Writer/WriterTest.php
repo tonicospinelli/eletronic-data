@@ -156,7 +156,7 @@ class WriterTest extends \PHPUnit_Framework_TestCase
 
         $this->assertCount(2, $document->getSegments());
 
-        $expected = '01:TEST::20140225' . PHP_EOL . '02::TEST2:20140225';
+        $expected = '01:TEST :     :20140225' . PHP_EOL . '02:     :TEST2:20140225';
         $this->assertEquals($expected, $this->object->write());
     }
 
@@ -169,7 +169,7 @@ class WriterTest extends \PHPUnit_Framework_TestCase
 
         $this->assertCount(2, $document->getSegments());
 
-        $expected = '01;TEST;;20140225' . PHP_EOL . '02;;TEST2;20140225';
+        $expected = '01;TEST ;     ;20140225' . PHP_EOL . '02;     ;TEST2;20140225';
         $this->assertEquals($expected, $this->object->write());
     }
 
@@ -182,7 +182,7 @@ class WriterTest extends \PHPUnit_Framework_TestCase
 
         $this->assertCount(2, $document->getSegments());
 
-        $expected = '01;TEST;;20140225' . PHP_EOL . '02;;TEST2;20140225';
+        $expected = '01;TEST ;     ;20140225' . PHP_EOL . '02;     ;TEST2;20140225';
 
         $this->object->writeFile($this->fileName);
 

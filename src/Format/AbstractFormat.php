@@ -9,7 +9,7 @@ abstract class AbstractFormat implements FormatInterface
 
     protected $length;
 
-    protected $fillWith;
+    protected $fillWith = ' ';
 
     protected $fillOn = self::FILL_ON_RIGHT;
 

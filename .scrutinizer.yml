@@ -6,11 +6,27 @@ before_commands:
     - "composer install --prefer-dist --no-dev"
 
 tools:
-    php_code_coverage:
-        test_command: phpunit -c phpunit.xml.dist
-    php_cpd: true
+    php_analyzer: true
+    php_changetracking: true
     php_code_sniffer:
+        enabled: true
         config:
             standard: PSR2
+    php_cpd: true
+    php_mess_detector: true
     php_pdepend: true
-    php_analyzer: true
+    php_sim: true
+
+build:
+    dependencies:
+        before:
+            - "sudo composer self-update"
+        override:
+            - "composer install --no-dev --no-interaction --prefer-dist"
+    tests:
+        override:
+            -
+                command: 'phpunit -c phpunit.xml.dist --coverage-clover=clover.xml'
+                coverage:
+                    file: 'clover.xml'
+                    format: 'php-clover'

@@ -50,5 +50,5 @@ interface DocumentInterface
      *
      * @return string
      */
-    public function toString($separator = '');
+    public function toString($separator = ' ');
 }
