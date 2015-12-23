@@ -15,10 +15,20 @@
         "php": ">=5.3.3",
         "doctrine/collections": "1.2.*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8",
+        "phpmd/phpmd": "@stable",
+        "squizlabs/php_codesniffer": "@stable"
+    },
     "autoload": {
         "psr-4": {
             "PositionalFile\\": "src/",
             "PositionalFile\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml.dist --testsuite unit",
+        "md": "phpmd src text cleancode,codesize,controversial,design,naming,unusedcode",
+        "cs": "phpcs --standard=PSR2 src"
     }
 }
